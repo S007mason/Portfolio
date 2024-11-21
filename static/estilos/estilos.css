@@ -1,0 +1,199 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Rowdies:wght@300;400;700&display=swap");
+
+/* Root Variables */
+:root {
+    --mainColor: black;
+    --mainFont: "Rowdies", sans-serif;
+    --h2-size: 36px;
+    --p-size: 16px;
+}
+
+/* General Styles */
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Navbar Styles */
+.blue-navbar {
+    background-color: rgb(219, 218, 218) !important;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: var(--mainText) !important;
+    font-family: var(--mainFont);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 200;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: black;
+    color: white !important;
+}
+
+.navbar-toggler {
+    color: black !important;
+}
+
+.navbar-collapse {
+    margin-top: 8px;
+}
+
+.d-flex {
+    margin-left: -15px;
+}
+
+/* Heading Styles */
+h1, h2, strong {
+    color: var(--mainColor);
+    font-family: var(--mainFont);
+}
+
+
+/* Button Styles */
+.btn-primary, .btn-dark {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+    padding: .3rem 1rem;
+    font-size: 1.25rem;
+    border-radius: .5rem;
+}
+
+.btn-primary:hover, .btn-dark:hover {
+    background-color: #35373b;
+}
+
+/* Home Page Styles */
+.mt-5 {
+    margin-top: 5rem !important;
+}
+
+/* Projects Page Styles */
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+}
+
+.project-header .project-icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.project-header .project-icon:hover {
+    color: #007bff;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+
+/* Contact Page Styles */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 15px; 
+}
+
+.contact-card, .form-card {
+    background-color: #5e6066;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(11, 11, 11, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-card {
+    background-color: white;
+    color: black;
+}
+
+.form-card h2 {
+    color:  #333;
+}
+
+.contact-card h2 {
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    margin: 10px 0;
+}
+
+.contact-card i {
+    margin-right: 10px;
+}
+
+.contact-card a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+.form-card .form-group {
+    margin-bottom: 15px;
+}
+
+.form-card .form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-card .btn {
+    width: 100%;
+    background-color: black;
+    border: none;
+}
+
+.form-card .btn:hover {
+    background-color: #35373b;
+}
