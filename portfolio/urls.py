@@ -1,9 +1,13 @@
-# portfolio/urls.py
 from django.contrib import admin
-from django.urls import path
-from myapp import views  # Asegúrate de que 'myapp' sea el nombre correcto de tu app
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('', include('myapp.urls')),  # Asegúrate de que myapp/urls.py exista y defina al menos la ruta para la página de inicio
 ]
+
+# En modo DEBUG, sirve archivos media
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
