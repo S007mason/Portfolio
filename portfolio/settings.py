@@ -8,11 +8,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", default="unsafe-default-key")
 
+# DEBUG se activa si la variable de entorno DEBUG está definida como "true" (ignora mayúsculas)
 DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
 # Hosts permitidos
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mason-4cs3.onrender.com']
-
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
@@ -44,7 +44,7 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Asegúrate de que esta línea apunte a tu carpeta de plantillas
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Verifica que esta carpeta contenga tus plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -59,14 +59,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
-# Database configuration
-# Si no se define DATABASE_URL en el entorno, se usará SQLite por defecto (útil para desarrollo)
+# Database configuration: si no se define DATABASE_URL en el entorno se usará SQLite (ideal para desarrollo)
 DATABASES = {
     'default': dj_database_url.config(
         default=os.environ.get('DATABASE_URL', f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}"),
         conn_max_age=600
     )
 }
+
+# Si utilizas archivos media, define MEDIA_URL y MEDIA_ROOT (opcional, pero recomendable)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
